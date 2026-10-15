@@ -1,0 +1,352 @@
+[
+  {
+    "item": 1,
+    "weight": 12,
+    "criterion": "recommendation.md recommends P3 as the single funded Q4 deployment plan.",
+    "category": "recommend",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 2,
+    "weight": 12,
+    "criterion": "recommendation.md reports P3's Q4 contribution advantage over P1 consistent with USD 17,377.14 at the displayed precision.",
+    "category": "recommend",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 3,
+    "weight": 11,
+    "criterion": "recommendation.md reports P3's Q4 contribution advantage over P2 consistent with USD 1,911.30 at the displayed precision.",
+    "category": "recommend",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 4,
+    "weight": 3,
+    "criterion": "recommendation.md reports P1's Q4 operating contribution after transition spending consistent with USD 2,904,170.42 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 5,
+    "weight": 3,
+    "criterion": "recommendation.md reports P2's Q4 operating contribution after transition spending consistent with USD 2,919,636.25 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 6,
+    "weight": 3,
+    "criterion": "recommendation.md reports P3's Q4 operating contribution after transition spending consistent with USD 2,921,547.55 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 7,
+    "weight": 2,
+    "criterion": "recommendation.md reports P1's Q4 managed inference charges consistent with USD 89,141.83 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 8,
+    "weight": 2,
+    "criterion": "recommendation.md reports P2's Q4 managed inference charges consistent with USD 7,500.00 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 9,
+    "weight": 2,
+    "criterion": "recommendation.md reports P3's Q4 managed inference charges consistent with USD 28,980.70 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 10,
+    "weight": 2,
+    "criterion": "recommendation.md reports P1's Q4 GPU reservation cost consistent with USD 50,784.00 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 11,
+    "weight": 2,
+    "criterion": "recommendation.md reports P2's Q4 GPU reservation cost consistent with USD 126,960.00 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 12,
+    "weight": 2,
+    "criterion": "recommendation.md reports P3's Q4 GPU reservation cost consistent with USD 101,568.00 at the displayed precision.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 13,
+    "weight": 2,
+    "criterion": "recommendation.md contains the heading Recommendation.",
+    "category": "instruction_following",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 14,
+    "weight": 2,
+    "criterion": "recommendation.md contains the heading Evidence.",
+    "category": "instruction_following",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 15,
+    "weight": 2,
+    "criterion": "recommendation.md contains the heading Alternatives.",
+    "category": "instruction_following",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 16,
+    "weight": 2,
+    "criterion": "recommendation.md contains the heading Risks.",
+    "category": "instruction_following",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 17,
+    "weight": 2,
+    "criterion": "recommendation.md is delivered as a Markdown memo.",
+    "category": "instruction_following",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 18,
+    "weight": 2,
+    "criterion": "recommendation.md explains that the latest request revision replaces earlier versions rather than adding demand.",
+    "category": "explore",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 19,
+    "weight": 2,
+    "criterion": "recommendation.md identifies mixed tokens/ktokens as requiring a common token unit.",
+    "category": "explore",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 20,
+    "weight": 2,
+    "criterion": "recommendation.md distinguishes inference attempts from logical customer demand.",
+    "category": "explore",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 21,
+    "weight": 2,
+    "criterion": "recommendation.md explains that cancelled latest requests are excluded from prospective completed demand.",
+    "category": "explore",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 22,
+    "weight": 2,
+    "criterion": "recommendation.md identifies the highest mapping revision as the approved routing rule.",
+    "category": "explore",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 23,
+    "weight": 2,
+    "criterion": "recommendation.md explains that superseded or award-ineligible infrastructure quotes cannot price the approved workload.",
+    "category": "explore",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 24,
+    "weight": 2,
+    "criterion": "recommendation.md identifies executed September terms as governing Q4 charges rather than the superseded July draft.",
+    "category": "hypothesize",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 25,
+    "weight": 2,
+    "criterion": "recommendation.md explains that the USD 2,500 managed monthly minimum survives P2.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 26,
+    "weight": 2,
+    "criterion": "recommendation.md explains that transition spending is charged once per plan rather than per routing row.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 27,
+    "weight": 2,
+    "criterion": "recommendation.md provides source citations that identify supplied materials supporting the financial evidence.",
+    "category": "synthesize",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 28,
+    "weight": 2,
+    "criterion": "recommendation.md states that restricted accounts must remain on Local-L.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 29,
+    "weight": 2,
+    "criterion": "recommendation.md identifies 0.94 as the minimum replay quality pass rate.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 30,
+    "weight": 2,
+    "criterion": "recommendation.md identifies 3000 ms as the replay p95 latency ceiling.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 31,
+    "weight": 2,
+    "criterion": "recommendation.md identifies ten GPUs as the monthly physical pool limit.",
+    "category": "analyze",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 32,
+    "weight": 2,
+    "criterion": "recommendation.md identifies replay drift as a risk to the recommendation.",
+    "category": "synthesize",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 33,
+    "weight": 1,
+    "criterion": "recommendation.md identifies concentrated demand growth as a capacity risk.",
+    "category": "synthesize",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 34,
+    "weight": 1,
+    "criterion": "recommendation.md identifies a service-threshold breach, demand above ten GPUs, or loss of the contribution lead as a circumstance requiring reconsideration.",
+    "category": "synthesize",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  },
+  {
+    "item": 35,
+    "weight": 2,
+    "criterion": "recommendation.md associates financial amounts used to compare plans with their plan identifiers and currency.",
+    "category": "synthesize",
+    "verification_type": "text",
+    "grades_output_files": [
+      "recommendation.md"
+    ]
+  }
+]

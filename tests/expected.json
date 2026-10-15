@@ -1,0 +1,125 @@
+{
+  "plans": [
+    {
+      "plan_id": "P1",
+      "revenue_usd": 3317096.25,
+      "managed_invoice_usd": 89141.83384000874,
+      "gpu_cost_usd": 50784.0,
+      "overhead_usd": 255000.0,
+      "transition_usd": 18000.0,
+      "contribution_usd": 2904170.416159991,
+      "oct_gpus": 2,
+      "nov_gpus": 2,
+      "dec_gpus": 2,
+      "feasible": true,
+      "selected": false
+    },
+    {
+      "plan_id": "P2",
+      "revenue_usd": 3317096.25,
+      "managed_invoice_usd": 7500.0,
+      "gpu_cost_usd": 126960.0,
+      "overhead_usd": 255000.0,
+      "transition_usd": 8000.0,
+      "contribution_usd": 2919636.25,
+      "oct_gpus": 5,
+      "nov_gpus": 5,
+      "dec_gpus": 5,
+      "feasible": true,
+      "selected": false
+    },
+    {
+      "plan_id": "P3",
+      "revenue_usd": 3317096.25,
+      "managed_invoice_usd": 28980.697530186255,
+      "gpu_cost_usd": 101568.0,
+      "overhead_usd": 255000.0,
+      "transition_usd": 10000.0,
+      "contribution_usd": 2921547.5524698137,
+      "oct_gpus": 4,
+      "nov_gpus": 4,
+      "dec_gpus": 4,
+      "feasible": true,
+      "selected": true
+    }
+  ],
+  "diagnostics": {
+    "clean_requests": 442622,
+    "old_revisions": 50000,
+    "cancelled": 7378,
+    "attempt_events": 550000,
+    "ktoken_rows": 40239,
+    "normalized_keys": 49180
+  },
+  "monthly": {
+    "P1": [
+      {
+        "month": "oct",
+        "managed_invoice_usd": 29005.865188929165,
+        "gpu_cost_usd": 17112.0,
+        "contribution_usd": 956580.8848110707,
+        "unrounded_gpu_requirement": 0.9701863994588006
+      },
+      {
+        "month": "nov",
+        "managed_invoice_usd": 28785.014333771425,
+        "gpu_cost_usd": 16560.0,
+        "contribution_usd": 975353.7356662285,
+        "unrounded_gpu_requirement": 0.9978683051353515
+      },
+      {
+        "month": "dec",
+        "managed_invoice_usd": 31350.954317308144,
+        "gpu_cost_usd": 17112.0,
+        "contribution_usd": 972235.795682692,
+        "unrounded_gpu_requirement": 1.0436878888780152
+      }
+    ],
+    "P2": [
+      {
+        "month": "oct",
+        "managed_invoice_usd": 2500.0,
+        "gpu_cost_usd": 42780.0,
+        "contribution_usd": 967418.75,
+        "unrounded_gpu_requirement": 4.477661944714231
+      },
+      {
+        "month": "nov",
+        "managed_invoice_usd": 2500.0,
+        "gpu_cost_usd": 41400.0,
+        "contribution_usd": 976798.75,
+        "unrounded_gpu_requirement": 4.59576231937006
+      },
+      {
+        "month": "dec",
+        "managed_invoice_usd": 2500.0,
+        "gpu_cost_usd": 42780.0,
+        "contribution_usd": 975418.75,
+        "unrounded_gpu_requirement": 4.834299483271292
+      }
+    ],
+    "P3": [
+      {
+        "month": "oct",
+        "managed_invoice_usd": 9417.590675185835,
+        "gpu_cost_usd": 34224.0,
+        "contribution_usd": 967057.1593248141,
+        "unrounded_gpu_requirement": 3.242963340645643
+      },
+      {
+        "month": "nov",
+        "managed_invoice_usd": 9349.040707000913,
+        "gpu_cost_usd": 33120.0,
+        "contribution_usd": 978229.709292999,
+        "unrounded_gpu_requirement": 3.320347686047499
+      },
+      {
+        "month": "dec",
+        "managed_invoice_usd": 10214.066147999507,
+        "gpu_cost_usd": 34224.0,
+        "contribution_usd": 976260.6838520004,
+        "unrounded_gpu_requirement": 3.495611554824614
+      }
+    ]
+  }
+}

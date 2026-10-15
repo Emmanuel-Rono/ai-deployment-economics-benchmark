@@ -1,0 +1,50 @@
+# Local environments, Harbor jobs, caches, backups and tested archives
+/.local-checks/
+/.venv/
+/venv/
+/jobs/
+/output/
+/outputs/
+/build/
+/dist/
+/artifacts/
+/releases/
+/*.zip
+/*.tar
+/*.tar.gz
+/*.tgz
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Local credentials and machine configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+*.p12
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+
+# Keep environment/data, solution/gold and tests/expected.json versioned.
+# Large authored data files use Git LFS through .gitattributes.

@@ -1,0 +1,16 @@
+schema_version = "1.1"
+[task]
+name = "baby-carrot/ai-deployment-economics"
+[metadata]
+difficulty = "hard"
+category = "analytics"
+tags = ["ai-economics", "capacity", "decision-support"]
+source = "Author-generated fictional evaluation records; see LICENSE and task_card.md"
+[agent]
+max_turns = 120
+timeout_sec = 7200
+[environment]
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+allow_internet = false
