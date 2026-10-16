@@ -31,6 +31,6 @@ The headline-price hypothesis must use the executed September rates of USD 6 per
 
 ## Risks
 
-Replay drift could invalidate a route that currently meets its service requirements. Reconsider if production validation shows a deployed model/use-case quality pass rate below 0.94 or p95 latency above 3000 ms. Replay evidence is a planning assumption rather than a measured causal effect of migration. Source: commercial_terms.pdf, Service and quality requirements.
+Replay drift could invalidate a route that currently meets its service requirements. Reconsider if production validation shows a deployed model/use-case quality pass rate below 0.94 or p95 latency above 3000 ms. Source: commercial_terms.pdf, Service and quality requirements.
 
-Concentrated account growth could increase the hourly peak and reservation cost. Reconsider if updated demand requires more than 10 GPUs in any month, or if revised total costs erase the selected plan's smallest contribution advantage of USD 1,911.30. The financial and operational owners should refresh demand and benchmark evidence before implementation. No unsupported revenue uplift or negotiated future rebate enters this comparison. Source: planning_policy.pdf, Capacity eligibility and planning limits and Reconciliation and limitations.
+Concentrated account growth could increase the hourly peak and reservation cost. Reconsider if updated demand requires more than 10 GPUs in any month, or if revised total costs erase the selected plan's smallest contribution advantage of USD 1,911.30. The financial and operational owners should refresh demand and benchmark evidence before implementation. Source: planning_policy.pdf, Capacity eligibility and planning limits and Reconciliation and limitations.

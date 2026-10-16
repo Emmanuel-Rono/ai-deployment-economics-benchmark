@@ -1,6 +1,6 @@
 param(
-    [string]$TaskDirectory = '.local-checks\harbor-task-memo',
-    [string]$JobPrefix = 'aq-econ-memo'
+    [string]$TaskDirectory = '.local-checks\harbor-task-submit',
+    [string]$JobPrefix = 'aq-econ-submit'
 )
 $ErrorActionPreference = 'Continue'
 Set-Location -LiteralPath $PSScriptRoot

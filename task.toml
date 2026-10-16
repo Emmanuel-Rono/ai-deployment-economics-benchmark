@@ -5,7 +5,7 @@ name = "baby-carrot/ai-deployment-economics"
 difficulty = "hard"
 category = "analytics"
 tags = ["ai-economics", "capacity", "decision-support"]
-source = "Author-generated fictional evaluation records; see LICENSE and task_card.md"
+source = "Synthetic benchmark records; see LICENSE and task_card.md"
 [agent]
 max_turns = 120
 timeout_sec = 7200

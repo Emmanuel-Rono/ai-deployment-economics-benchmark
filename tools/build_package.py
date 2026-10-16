@@ -9,9 +9,13 @@ from zipfile import ZIP_DEFLATED, ZipFile
 ROOT = Path(__file__).resolve().parent.parent
 TOP_LEVEL = [
     'task.toml', 'instruction.md', 'rubrics.json', 'task_card.md', 'LICENSE',
-    'BUILD_REPORT.md', 'SUBMISSION_GUIDE.md', 'INSTRUCTION_COVERAGE.md',
 ]
-TREES = ['environment', 'solution', 'tests']
+RUNTIME_FILES = [
+    'environment/Dockerfile',
+    'solution/solve.sh', 'solution/solve.py', 'solution/reporting.py',
+    'tests/test.sh', 'tests/run_verifier.py', 'tests/test_outputs.py',
+    'tests/test_weights.json',
+]
 SKIP_DIRS = {'.git', '.local-checks', '.venv', '__pycache__',
              '.pytest_cache', '.mypy_cache', '.ruff_cache'}
 SKIP_FILES = {'.gitignore', '.gitattributes', '.DS_Store', 'Thumbs.db'}
@@ -78,8 +82,8 @@ def main():
     label = args.name[len('Aq_Econ-'):] if args.name.startswith('Aq_Econ-') else args.name
     archive = ROOT / '.local-checks' / (args.name + '.zip')
     stage = ROOT / '.local-checks' / ('harbor-task-' + label)
-    files = [ROOT / name for name in TOP_LEVEL]
-    files += [path for tree in TREES for path in (ROOT / tree).rglob('*')
+    files = [ROOT / name for name in TOP_LEVEL + RUNTIME_FILES]
+    files += [path for path in (ROOT / 'environment/data').rglob('*')
               if path.is_file() and not any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts)
               and path.name not in SKIP_FILES and path.suffix != '.pyc']
     validate(files)

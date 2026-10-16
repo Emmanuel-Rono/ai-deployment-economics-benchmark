@@ -1,28 +1,40 @@
-# Aq_Econ
+# AI Deployment Economics Benchmark
 
-An executable analytical benchmark for AI deployment investment decisions. An analyst evaluates three Q4 deployment plans using demand records, commercial terms, replay evidence and infrastructure quotations, then writes an investment-committee recommendation.
+An executable benchmark for evaluating deployment investment decisions using operational, commercial and financial evidence.
 
-## Current version
+The task compares three Q4 2026 deployment plans and requires an investment-committee recommendation supported by the supplied data.
 
-- 500,000 workload version rows, 550,000 attempt events and 5,000 customer accounts.
-- Ten generated input files totalling about 147 MiB.
-- One requested deliverable: `recommendation.md`.
-- A 35-criterion, 100-point rubric for substantive answer quality.
-- Harbor 0.18.0: nop diagnostic reward **0.0**, oracle **1.0**, with no exceptions.
+## Dataset
 
-The five programmatic checks validate the memo and its headings. Substantive grading uses the rubric. Platform rubric scores and model difficulty have not been measured. See [run evidence](HARBOR_RUN_RESULTS.md).
+| Component | Records |
+|---|---:|
+| Workload versions | 500,000 |
+| Inference attempts | 550,000 |
+| Customer accounts | 5,000 |
+| Replay batches | 5,000 |
+| Routing records | 500 |
+| Infrastructure quotations | 360 |
 
-## Repository layout
+Ten input files span SQLite, JSONL, CSV and PDF, totalling 147.37 MiB. Dataset provenance and terms are recorded in [LICENSE](LICENSE).
 
-| Path | Purpose |
+## Evaluation
+
+- Deliverable: `recommendation.md`.
+- Rubric: 35 criteria, 100 points.
+- Harbor version: 0.18.0.
+- Local verification: nop 0.0; oracle 1.0; zero exceptions.
+
+The verifier checks the memo and its four headings. The rubric scores the recommendation, financial evidence, citations, reconciliation, operating constraints and risks. [Run results](HARBOR_RUN_RESULTS.md).
+
+## Project structure
+
+| Path | Contents |
 |---|---|
-| `instruction.md` | Exact analyst prompt |
-| `environment/` | Container definition and input data |
-| `solution/` | Private reference computation and example memo |
-| `tests/` | Output diagnostics and numerical reference targets |
-| `rubrics.json` | Answer-quality criteria |
-| `tools/` | Repository tooling; excluded from client ZIPs |
+| `instruction.md` | Task prompt |
+| `environment/` | Docker environment and input data |
+| `solution/` | Reference computation and memo |
+| `tests/` | Verifier and expected values |
+| `rubrics.json` | Scoring criteria |
+| `tools/` | Package builder |
 
-See [GitHub and submission guide](GIT_TRACKING.md) for initial push commands, Git LFS, local setup, packaging and exact-archive checks. Keep tested ZIPs and raw job logs under `.local-checks/`; Git ignores that directory.
-
-Generated scenario material is fictional. Its declared licence is recorded in [LICENSE](LICENSE).
+[Git and release workflow](GIT_TRACKING.md) ? [Submission guide](SUBMISSION_GUIDE.md)

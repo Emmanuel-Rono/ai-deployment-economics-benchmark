@@ -1,4 +1,4 @@
-"""Recompute the decision from shipped evidence, not embedded answer strings."""
+"""Compute quarterly deployment economics from the input dataset."""
 import argparse,csv,json,math,re,sqlite3,statistics
 from pathlib import Path
 from collections import defaultdict

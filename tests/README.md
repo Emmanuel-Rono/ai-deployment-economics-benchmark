@@ -1,5 +1,7 @@
-# Memo verifier
+# Verifier
 
-`test.sh` runs five output-only diagnostics: recommendation.md is present and nonempty, and the four requested headings exist. ATX and Setext Markdown headings are accepted. No CSV, table, compulsory diagnostic numbers, fixed recommendation wording or monetary precision is required.
+`test.sh` executes five offline checks: a nonempty `recommendation.md` and the four required headings. ATX and Setext headings are supported.
 
-The substantive recommendation, financial evidence, citations, reconciliation, constraints and risks are judged by the 35-item rubric, not inferred from passing these file checks. Empty output passes zero checks. The standard offline runner writes CTRF diagnostics and a passed/total reward; test_weights.json remains empty. See the build report for the boundary between local diagnostics and platform rubric scoring.
+Results are written to `/logs/verifier/ctrf.json` and `/logs/verifier/reward.json`. The diagnostic reward is passed checks divided by total checks. `test_weights.json` is an empty array.
+
+The 35-item rubric evaluates decision correctness, financial evidence, citations, reconciliation, constraints, risks and presentation.

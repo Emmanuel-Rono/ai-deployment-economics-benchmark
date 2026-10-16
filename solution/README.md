@@ -1,9 +1,11 @@
 # Reference solution
-solve.py reads only the shipped data and reconstructs the quarter comparison. It extracts controlling price terms from the PDFs and computes costs from the latest request records. solve.sh is the oracle entry point. gold/ contains examples for reviewer inspection; neither it nor the solution is copied into the agent image.
 
-Local non-container execution:
-python solution/solve.py --data environment/data --output /tmp/meridian-output
+`solve.py` computes Q4 plan economics from the supplied workload, forecast, routing, benchmark, quotation and contract data. `reporting.py` writes `recommendation.md`.
 
-Python 3.12 and pypdf 6.1.1 are the intended image dependencies. The supplied base-image digest previously resolved successfully on this machine. The merged image and reference execution are checked again through Harbor. `reporting.py` renders the memo from the recomputed results.
+Oracle entry point: `solve.sh`.
 
-The agreed prompt now requests only recommendation.md. The reference solution emits that memo; its financial table and extra reconciliation counts are optional examples, not compulsory output structure.
+```powershell
+python solution/solve.py --data environment/data --output .local-checks/reference-output
+```
+
+Container dependencies: Python 3.12 and pypdf 6.1.1. The reference memo is stored in `gold/recommendation.md`.

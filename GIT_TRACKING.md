@@ -1,14 +1,8 @@
-# Personal GitHub tracking and client submission
+# Git and release workflow
 
-Git tracks the editable project, including your repository notes and operator scripts. The client receives the task ZIP. The packaging tool uses an explicit list of task files, so `.gitignore`, `.gitattributes`, `.git/`, this guide, README.md and tools/ are excluded from that ZIP.
+## Initial push
 
-## First push
-
-There is currently no Git repository in this working folder. These files prepare the folder; no repository, commit, remote or push was created by this setup.
-
-Create an empty repository on GitHub. Keep its README, licence and gitignore initialization options off because this folder already supplies those files. A private repository is a useful default for your working benchmark and reference solution; choose the visibility you want for your brand.
-
-Run in PowerShell from this project folder:
+Create an empty GitHub repository, then run:
 
 ```powershell
 git init -b main
@@ -16,34 +10,23 @@ git lfs install --local
 git add .
 git status --short
 git lfs ls-files
-git commit -m "Track expanded Aq_Econ benchmark with agreed memo prompt"
+git commit -m "Add deployment economics benchmark"
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 git push -u origin main
 ```
 
-Replace the example username and repository with yours. Git will use your configured author identity. Git LFS is installed on this machine; `.gitattributes` places the workload SQLite database and attempt-event JSONL under LFS. Install LFS before staging those files. The data remains versioned; Git stores pointers and LFS stores the actual large content.
+Replace the repository URL. For an existing local repository, use the update commands below. `.gitattributes` tracks the workload SQLite database and attempt-event JSONL through Git LFS. `.gitignore` excludes environments, caches, logs, backups and ZIPs.
 
-Review the staged file list before committing. `.local-checks`, Python environments/caches, output folders, root ZIPs and local credentials should be absent. The input data, solution, gold memo, expected values and rubric should be present.
-
-For later changes:
+## Updates
 
 ```powershell
 git add .
 git diff --cached --stat
-git commit -m "Describe the change made to the task"
+git commit -m "Describe the update"
 git push
 ```
 
-Use a descriptive commit for each meaningful dataset, prompt, solver or scoring change. Optionally tag a tested submission:
-
-```powershell
-git tag -a submission-v1 -m "Tested memo-only task submission"
-git push origin submission-v1
-```
-
-Use a new tag name for each release. The archive SHA-256 identifies the submitted bytes; the Git commit/tag identifies the editable source.
-
-## Restore the project on another machine
+## Restore and install
 
 ```powershell
 git lfs install
@@ -54,35 +37,32 @@ uv venv --python 3.13 .local-checks/venv
 uv pip install --python .local-checks/venv/Scripts/python.exe "harbor==0.18.0" "pypdf==6.1.1"
 ```
 
-Python, uv, Git/Git LFS and a running Docker engine are prerequisites. `.local-checks` is intentionally not restored from Git. LFS inputs must be downloaded before building the Docker image or client ZIP; the packaging tool rejects LFS pointers in place of data.
+Start Docker before running Harbor.
 
-## Submit the current tested version
-
-The current upload file is **`.local-checks/Aq_Econ-memo.zip`**. It already passed official nop and oracle checks. Do not use an older `merged` or `revised` ZIP and do not ZIP the entire workspace.
-
-Check its fingerprint:
+## Build and validate
 
 ```powershell
-Get-FileHash -LiteralPath .local-checks/Aq_Econ-memo.zip -Algorithm SHA256
+python tools/build_package.py --name Aq_Econ-submit
+./RUN_HARBOR.ps1 -TaskDirectory '.local-checks/harbor-task-submit' -JobPrefix 'aq-econ-submit'
 ```
 
-Expected SHA-256:
+The builder creates the ZIP, clean extraction and SHA-256 manifest under `.local-checks/`. Use a new version name for each release. Required run results: nop 0.0, oracle 1.0, zero exceptions.
 
-```text
-23f9b176a073ae5a9e79f6b6d16b1653db92a96a0f2e93299afe172056bfb2c5
-```
-
-Upload that exact ZIP in the client's package-upload field. No separate data upload is needed. Mark `environment/data/product_research.pdf` as the only distractor. Import the packaged 35-item rubric if the editor does not populate automatically. Declare the actual CC-BY-4.0 provenance, enter real preparation time, and confirm the local runs for this exact archive. Full evidence is in HARBOR_RUN_RESULTS.md. Submission starts the client's own checks; local success is not platform approval.
-
-## Build and test a future version
-
-After changing task files, prepare a newly named archive rather than modifying a previously tested ZIP:
+Inspect the jobs:
 
 ```powershell
-python tools/build_package.py --name Aq_Econ-v2
-./RUN_HARBOR.ps1 -TaskDirectory '.local-checks/harbor-task-v2' -JobPrefix 'aq-econ-v2'
+& ./.local-checks/venv/Scripts/harbor.exe view ./.local-checks/harbor-jobs --jobs --host 127.0.0.1 --port 8080
 ```
 
-The builder lists the output ZIP, extraction directory and SHA-256. It refuses to overwrite an existing archive or extraction. Inspect the job results: nop must have reward 0.0, oracle 1.0, and neither trial should contain an exception. The command exit alone is not the result. Record the new hash and run evidence in a tracked report, then commit/tag that source version and upload those same ZIP bytes.
+Open http://127.0.0.1:8080. Record the archive hash and job results in HARBOR_RUN_RESULTS.md, then upload the tested ZIP. The task file list excludes Git metadata, README.md, this guide, tools/ and local run artifacts.
 
-The builder is deliberately independent of Git ignore rules. Ignoring a file in Git does not exclude it from arbitrary ZIP commands; using the explicit packaging tool is what excludes repository metadata and personal tracking files from client uploads.
+## Tag a release
+
+```powershell
+git tag -a submission-v1 -m "Validated task release"
+git push origin submission-v1
+```
+
+Use a unique tag for each submitted version. Submission settings are in SUBMISSION_GUIDE.md.
+
+The client ZIP contains only task.toml, instruction.md, rubrics.json, task_card.md, LICENSE, the Docker environment and data, the reference-solution runtime, and the verifier runtime. Repository guides, reports, READMEs, gold examples, expected-value audit files and local artifacts stay outside the ZIP.
