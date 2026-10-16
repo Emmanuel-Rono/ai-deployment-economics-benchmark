@@ -1,5 +1,6 @@
 # AI Deployment Economics Benchmark
 
+<<<<<<< HEAD
 An executable benchmark for evaluating deployment investment decisions using operational, commercial and financial evidence.
 
 The task compares three Q4 2026 deployment plans and requires an investment-committee recommendation supported by the supplied data.
@@ -14,6 +15,9 @@ The task compares three Q4 2026 deployment plans and requires an investment-comm
 | Replay batches | 5,000 |
 | Routing records | 500 |
 | Infrastructure quotations | 360 |
+=======
+An analytical benchmark evaluating AI agents’ ability to recommend an enterprise AI deployment plan using operational, commercial and financial evidence. Includes a real dataset, an executable reference solution, a weighted scoring rubric and Harbor-based validation.
+>>>>>>> 8ef100045c9a4170ffb3afb668b425419532f127
 
 Ten input files span SQLite, JSONL, CSV and PDF, totalling 147.37 MiB. Dataset provenance and terms are recorded in [LICENSE](LICENSE).
 
@@ -30,6 +34,7 @@ The verifier checks the memo and its four headings. The rubric scores the recomm
 
 | Path | Contents |
 |---|---|
+<<<<<<< HEAD
 | `instruction.md` | Task prompt |
 | `environment/` | Docker environment and input data |
 | `solution/` | Reference computation and memo |
@@ -38,3 +43,13 @@ The verifier checks the memo and its four headings. The rubric scores the recomm
 | `tools/` | Package builder |
 
 [Git and release workflow](GIT_TRACKING.md) ? [Submission guide](SUBMISSION_GUIDE.md)
+=======
+| `instruction.md` | analyst prompt |
+| `environment/` | Container definition and input data |
+| `solution/` | Private reference computation and example memo |
+| `tests/` | Output diagnostics and numerical reference targets |
+| `rubrics.json` | Rubrics |
+| `tools/` | Repository tooling; excluded from client ZIPs |
+
+
+>>>>>>> 8ef100045c9a4170ffb3afb668b425419532f127
